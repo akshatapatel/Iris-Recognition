@@ -100,7 +100,7 @@ and cosine distances as defined in the paper for every test image
 against all training samples. Then, the minimum value for all 3
 distances is taken as the matched image and its index is stored. 
 
-3.Next, if the matched index for each image is correct (i.e, the matched
+3. Next, if the matched index for each image is correct (i.e, the matched
 image is from the same folder as our test image) then it is considered
 as the correct match, and 1 is appended to our “match” list. The same is
 repeated for all three distances to get match\_L1,match\_L2 and
