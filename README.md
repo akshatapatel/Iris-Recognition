@@ -170,7 +170,7 @@ images
 FNMR = no. of images incorrectly rejected / total no of rejected images
 
 
-IMAGES
+Images
 ======
 
 This file contains 8 images depicting the step by step output we
