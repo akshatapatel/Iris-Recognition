@@ -25,11 +25,15 @@ The function IrisLocalization(images) does the following:
 
 # IrisNormalization.py
 
-Variables:-
+## Variables:-
 normalized=initially empty, stores all normalized images 
+
 cent=counter variable that loops through all center values
+
 Center_x,Center_y=coordinates of pupil center
+
 nsamples=defines number of equally spaced intervals
+
 polar=array that will store the normalized image
 
 
@@ -41,7 +45,7 @@ We sequentially load each image from the list boundary returned by the previous 
 
 # ImageEnhancement.py
 
-Variables:- 
+## Variables:- 
 normalized=list of normalized images
 
 
@@ -50,7 +54,7 @@ In this function, we enhance the image using Histogram Equalization to increase 
 
 # FeatureExtraction.py
 
-Variables:- 
+## Variables:- 
 Filter1: 1st filtered image
 Filter2: 2nd filtered image
 Img_roi: 48*512 rectangular image of interest
@@ -118,15 +122,15 @@ This function calculates the mean and standard deviation values grid by grid, wh
 This py file matches our testing and training feature vectors (with and without dimensionality reduction).
 
 
-Function dim_reduction:
-Variables:-
+## Function dim_reduction:
+## Variables:-
 feature_vector_train: list of feature vectors of the train images
 feature_vector_test: list of feature vectors of the test images
 components: list of different dimensions that the feature vector has to be reduced to
 y_train :contains the labels of the classes of the training feature vectors for 108 eyes.
 
-Function IrisMatching
-Variables:-
+## Function IrisMatching
+## Variables:-
 Feature_vector_train,feature_vector_test: input feature vectors
 red_train,red_test: reduced feature vector for training and testing (same as original in case of no reduction)
 components: input of the number of reduced dimensions 
@@ -153,7 +157,7 @@ If flag==0 then it performs matching on the reduced feature vector of size provi
 
 # PerformanceEvaluation.py
 
-Variables:-
+## Variables:-
 correct_L1,correct_L2,correct_cosine: store the elements that are correctly matched i.e, have a value of 1
 crr_L1,crr_L2 and crr_cosine: stores the CRR value for L1, L2 and cosine distance
 
@@ -189,10 +193,17 @@ FNMR = no. of images incorrectly rejected / total no of rejected images
 This file contains 8 images depicting the step by step output we obtained for localization, normalization and enhancement.
 
 Fig1 depicts the grayscale image of the eye
+
 Fig2 depicts the colored image which is what get stored in the target array in the Localization function
+
 Fig3 depicts the output of Localization, i.e the original image with inner and outer boundaries
+
 Fig4 depicts the Enhanced Normalized 64x512 rectangular image which is used for further feature extraction steps
+
 Fig5 shows the recognition results using features of different dimensionality
+
 Fig6 table that shows the car for L1,L2,cosine fro original and reduced feature vectors
+
 Fig7 shows the ROC curve
+
 Fig8 table that shows ROC fmr and fnmr measures for different thresholds.
