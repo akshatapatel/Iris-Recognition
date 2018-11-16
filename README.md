@@ -49,7 +49,7 @@ The functions ‘m’ and ‘gabor’ help in calculating the spatial filter
 defined in the paper
 
 Code: 
-![Code1_FeatureExtraction](https://raw.githubusercontent.com/akshatapatel/Iris-Recognition/Images/code1.png)
+![Code1_FeatureExtraction](https://github.com/akshatapatel/Iris-Recognition/blob/master/Images/code1.png)
 
 The function spatial takes f, dx and dy as parameters which are defined
 in the paper. It creates a 8x8 block which we run over the normalized
@@ -61,14 +61,14 @@ region of interest. This helps in further improving the results of
 matching.
 
 Code: 
-![Code2_FeatureExtraction](https://raw.githubusercontent.com/akshatapatel/Iris-Recognition/Images/code2.png)
+![Code2_FeatureExtraction](https://github.com/akshatapatel/Iris-Recognition/blob/master/Images/code2.png)
 
 The function above defines this Region of interest and creates two
 channels: filter1 and filter 2, which are then convolved with our RoI to
 get two filtered images.
 
 Code snippet for get\_vec(): 
-![Code3_FeatureExtraction](https://raw.githubusercontent.com/akshatapatel/Iris-Recognition/Images/code3.png)
+![Code3_FeatureExtraction](https://github.com/akshatapatel/Iris-Recognition/blob/master/Images/code3.png)
 
 These filtered images are then used to get our feature vector using the
 function ‘get\_vec()’ This function calculates the mean and standard
