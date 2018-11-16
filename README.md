@@ -6,10 +6,15 @@ Iris recognition using applied machine learning on CASIA iris images dataset
 
 ## Variables:-
 images=list of all images
+
 target=contains the colored images
+
 boundary=list that contains final images with inner and outer boundaries of the iris,initially empty
+
 centers=list that contains pupil centers of all images,initially empty
+
 draw_img=image over which circles will be drawn
+
 a = (crop_center_x,crop_center_y): Pupil center
 
 
@@ -56,8 +61,11 @@ In this function, we enhance the image using Histogram Equalization to increase 
 
 ## Variables:- 
 Filter1: 1st filtered image
+
 Filter2: 2nd filtered image
+
 Img_roi: 48*512 rectangular image of interest
+
 Feature_vector: the feature vector found by combining the means and standard deviation for each of the two channels
 
 
@@ -125,20 +133,31 @@ This py file matches our testing and training feature vectors (with and without 
 ## Function dim_reduction:
 ## Variables:-
 feature_vector_train: list of feature vectors of the train images
+
 feature_vector_test: list of feature vectors of the test images
+
 components: list of different dimensions that the feature vector has to be reduced to
+
 y_train :contains the labels of the classes of the training feature vectors for 108 eyes.
 
 ## Function IrisMatching
 ## Variables:-
 Feature_vector_train,feature_vector_test: input feature vectors
+
 red_train,red_test: reduced feature vector for training and testing (same as original in case of no reduction)
+
 components: input of the number of reduced dimensions 
+
 index_L1,index_L2,index_cosine: values of matching indexes with minimum distance from a test image (size 432)
+
 sumL1, sumL2, cosinedist: actual values of all 3 distance parameters
+
 match, count: used to compare the matched index to the actual index to determine matching
+
 match_L1,match_L2 and match_cosine: stores 0/1 if incorrectly or correctly matched
+
 match_cosine_ROC: stores 0/1 by matching it using threshold values explained below
+
 Thresh: threshold values for ROC
 
 
@@ -159,6 +178,7 @@ If flag==0 then it performs matching on the reduced feature vector of size provi
 
 ## Variables:-
 correct_L1,correct_L2,correct_cosine: store the elements that are correctly matched i.e, have a value of 1
+
 crr_L1,crr_L2 and crr_cosine: stores the CRR value for L1, L2 and cosine distance
 
 
@@ -184,7 +204,9 @@ This py file is the main file, where we call all the above functions to execute 
    4. Use the 1536 component CRR’s and 107 component CRR’s to plot the table to compare their accuracy
    5. ROC requires the rate of false matches and the rate of false non-matches. False matches are the number of eyes that are matched but are not authorized whereas False non-matches are the number of eyes that are rejected but are authorized.
 To calculate ROC, we use the matching_cosine_ROC we got from IrisMatching() and compare it with our actual matching_cosine answer to calculate the FMR and FNMR for all three threshold values.
+
 FMR= no. of images incorrectly accepted / total number of accepted images
+
 FNMR = no. of images incorrectly rejected / total no of rejected images
 
 
