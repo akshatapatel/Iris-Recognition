@@ -132,27 +132,27 @@ This py file is the main file, where we call all the above functions to execute 
 
 1. First, we read and process all training files:
 
-  1. Read all files 
+  a. Read all files 
 
-  2. Run iris localization on all of them and get the images.
+  b. Run iris localization on all of them and get the images.
 
-  3. On the localized images, run normalization and enhancement to get our enhanced images for feature extraction.
+  c. On the localized images, run normalization and enhancement to get our enhanced images for feature extraction.
 
-  4. Then, run feature extraction to get all the feature vectors. 
+  d. Then, run feature extraction to get all the feature vectors. 
 
 2.The same steps a-d are followed for the testing data. 
 
 3. Once we have our training and testing feature vectors, we run iris matching and performance evaluation on them as:
 
-  1. Get matching values and then CRR scores for 10,40,60,80,90 and 107 components in the reduced feature vector 
+  a. Get matching values and then CRR scores for 10,40,60,80,90 and 107 components in the reduced feature vector 
   
-  2. Use those values to plot the CRR vs Feature Vector dimensions graph 
+  b. Use those values to plot the CRR vs Feature Vector dimensions graph 
   
-  3. Get matching values and then CRR scores for our full length 1536 feature vector 
+  c. Get matching values and then CRR scores for our full length 1536 feature vector 
 
-  4. Use the 1536 component CRR’s and 107 component CRR’s to plot the table to compare their accuracy 
+  d. Use the 1536 component CRR’s and 107 component CRR’s to plot the table to compare their accuracy 
   
-  5. ROC requires the rate of false matches and the rate of false non-matches. 
+4. ROC requires the rate of false matches and the rate of false non-matches. 
 False matches are the number of eyes that are matched but are not authorized whereas
 False non-matches are the number of eyes that are rejected but are
 authorized. To calculate ROC, we use the matching\_cosine\_ROC we got
