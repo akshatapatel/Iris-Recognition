@@ -94,14 +94,8 @@ standard deviation for each of the two channels
 The functions ‘m’ and ‘gabor’ help in calculating the spatial filter
 defined in the paper
 
-Code: def m(x ,y, f): val = np.cos(2*np.pi*f\*math.sqrt(x **2 + y**2))
-return val
-
-def gabor(x, y, dx, dy, f): gb = (1/(2*math.pi*dx*dy))*np.exp(-0.5*(x**2
-/ dx**2 + y**2 / dy**2)) * m(x, y, f) return gb
-
-def spatial(f,dx,dy): sfilter=np.zeros((8,8)) for i in range(8): for j
-in range(8): sfilter\[i,j\]=gabor((-4+j),(-4+i),dx,dy,f) return sfilter
+Code: 
+![Code1_FeatureExtraction](https://raw.githubusercontent.com/akshatapatel/Iris-Recognition/Images/code1.png)
 
 The function spatial takes f, dx and dy as parameters which are defined
 in the paper. It creates a 8x8 block which we run over the normalized
@@ -112,21 +106,15 @@ we run this 8x8 block over a normalized image of 48\*512, which is our
 region of interest. This helps in further improving the results of
 matching.
 
-Code: filter1=spatial(0.67,3,1.5) filter2=spatial(0.67,4,1.5)
-feature\_vector=\[\] for i in range(len(enhanced)): img=enhanced\[i\]
-img\_roi=img\[:48,:\] filtered1=cv2.filter2D(src=img\_roi,
-kernel=filter1, ddepth=-1) filtered2=cv2.filter2D(src=img\_roi,
-kernel=filter2, ddepth=-1)
+Code: 
+![Code2_FeatureExtraction](https://raw.githubusercontent.com/akshatapatel/Iris-Recognition/Images/code2.png)
 
 The function above defines this Region of interest and creates two
 channels: filter1 and filter 2, which are then convolved with our RoI to
 get two filtered images.
 
-Code snippet for get\_vec(): for i in range(6): for j in range(64):
-start\_height = i*8 end\_height = start\_height+8 start\_wid = j*8
-end\_wid = start\_wid+8 grid1 =
-convolvedtrain1\[start\_height:end\_height, start\_wid:end\_wid\] grid2
-= convolvedtrain2\[start\_height:end\_height, start\_wid:end\_wid\]
+Code snippet for get\_vec(): 
+![Code3_FeatureExtraction](https://raw.githubusercontent.com/akshatapatel/Iris-Recognition/Images/code3.png)
 
 These filtered images are then used to get our feature vector using the
 function ‘get\_vec()’ This function calculates the mean and standard
