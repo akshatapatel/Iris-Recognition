@@ -4,7 +4,7 @@ Iris-Recognition
 Iris recognition using applied machine learning on CASIA iris images
 dataset
 
-IrisLocalization.py
+## IrisLocalization.py
 ===================
 
 The function IrisLocalization(images) does the following: 
@@ -24,7 +24,7 @@ The function IrisLocalization(images) does the following:
 7. The list “boundary” stores all the images with boundaries drawn, while the list “centers” stores the center coordinates.
 
 
-IrisNormalization.py
+## IrisNormalization.py
 ====================
 
 We sequentially load each image from the list boundary returned by the previous function and initialize an empty list to store the normalized images. 
@@ -42,7 +42,7 @@ ImageEnhancement.py
 In this function, we enhance the image using Histogram Equalization to increase the contrast of the image for better feature extraction.
 
 
-FeatureExtraction.py
+## FeatureExtraction.py
 ====================
 
 The functions ‘m’ and ‘gabor’ help in calculating the spatial filter
@@ -77,7 +77,7 @@ calculated values are then appended sequentially to the feature vector,
 which is of size 1536 (6x64x4).
 
 
-IrisMatching.py
+## IrisMatching.py
 ===============
 
 This py file matches our testing and training feature vectors (with and
@@ -110,7 +110,7 @@ match\_cosine and they are returned
 (accepted) otherwise it is 0 (rejected). This is stored for all 3 threshold values and returned.
 
 
-PerformanceEvaluation.py
+## PerformanceEvaluation.py
 ========================
 
 This py file calculates the correct recognition rates for our code. The
@@ -125,12 +125,12 @@ matched) by length of match\_L1(as it has all the eyes).
 
 2. Thus, we get the values of crr\_L1,crr\_L2 and crr\_cosine.
 
-IrisRecognition.py
+## IrisRecognition.py
 ==================
 
 This py file is the main file, where we call all the above functions to execute the entire function of iris recognition. 
 
-# 1.
+### 1.
 First, we read and process all training files:
 
 a. Read all files 
@@ -141,10 +141,10 @@ c. On the localized images, run normalization and enhancement to get our enhance
 
 d. Then, run feature extraction to get all the feature vectors. 
 
-# 2.
+### 2.
 The same steps a-d are followed for the testing data. 
 
-# 3.
+### 3.
 Once we have our training and testing feature vectors, we run iris matching and performance evaluation on them as:
 
 a. Get matching values and then CRR scores for 10,40,60,80,90 and 107 components in the reduced feature vector 
@@ -155,7 +155,7 @@ c. Get matching values and then CRR scores for our full length 1536 feature vect
 
 d. Use the 1536 component CRR’s and 107 component CRR’s to plot the table to compare their accuracy 
   
-# 4.
+### 4.
 ROC requires the rate of false matches and the rate of false non-matches. 
 
 False matches are the number of eyes that are matched but are not authorized whereas
@@ -170,7 +170,7 @@ images
 FNMR = no. of images incorrectly rejected / total no of rejected images
 
 
-Images
+## Images
 ======
 
 This file contains 8 images depicting the step by step output we
