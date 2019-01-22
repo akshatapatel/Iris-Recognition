@@ -190,7 +190,7 @@ used for further feature extraction steps
 Fig5 shows the recognition results using features of different
 dimensionality
 
-Fig6 table that shows the car for L1,L2,cosine fro original and reduced
+Fig6 table that shows the car for L1,L2,cosine for original and reduced
 feature vectors
 
 Fig7 shows the ROC curve
